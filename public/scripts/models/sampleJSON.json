@@ -1,0 +1,303 @@
+{
+    "league": {
+        "id": "4353138d-4c22-4396-95d8-5f587d2df25c",
+        "name": "NBA",
+        "alias": "NBA"
+    },
+    "start_time": "2017-06-28T04:00:00+00:00",
+    "end_time": "2017-06-29T03:59:59+00:00",
+    "players": [{
+        "id": "2629c593-5f7c-4d34-aec7-6b949572af2a",
+        "full_name": "Lou Williams",
+        "first_name": "Lou",
+        "last_name": "Williams",
+        "position": "G",
+        "primary_position": "SG",
+        "transfers": [{
+            "id": "f170073a-d3e8-4bd2-8390-6f68da48c9b0",
+            "desc": "The Houston Rockets traded G Lou Williams to the Los Angeles Clippers.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T21:42:30+00:00",
+            "from_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            },
+            "to_team": {
+                "id": "583ecdfb-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Clippers",
+                "market": "Los Angeles"
+            }
+        }]
+    }, {
+        "id": "3f0fe7a4-888a-4564-aa0d-f310b05071bd",
+        "full_name": "Paul Pierce",
+        "first_name": "Paul",
+        "last_name": "Pierce",
+        "position": "F",
+        "primary_position": "SF",
+        "transfers": [{
+            "id": "35f227e8-d2c1-40c5-a381-e16f7eb76349",
+            "desc": "The Los Angeles Clippers waived F Paul Pierce.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T21:16:44+00:00",
+            "from_team": {
+                "id": "583ecdfb-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Clippers",
+                "market": "Los Angeles"
+            }
+        }]
+    }, {
+        "id": "41d83be6-3c9d-4b35-87ab-f5480a877997",
+        "full_name": "Tim Quarterman",
+        "first_name": "Tim",
+        "last_name": "Quarterman",
+        "position": "G",
+        "primary_position": "SG",
+        "transfers": [{
+            "id": "60b9c2ab-834a-47a1-96a9-f7068b46883d",
+            "desc": "The Portland Trailblazers traded G Tim Quarterman to the Houston Rockets.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T18:09:37+00:00",
+            "from_team": {
+                "id": "583ed056-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Trail Blazers",
+                "market": "Portland"
+            },
+            "to_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            }
+        }]
+    }, {
+        "id": "6c73ff64-44b8-4383-a21b-61ac145b446c",
+        "full_name": "DeAndre Liggins",
+        "first_name": "DeAndre",
+        "last_name": "Liggins",
+        "position": "G",
+        "primary_position": "SG",
+        "transfers": [{
+            "id": "6a7e26b9-ec1e-42a7-adf0-f8f4ca29f7cf",
+            "desc": "The Houston Rockets traded G DeAndre Liggins to the Los Angeles Clippers.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T21:41:56+00:00",
+            "from_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            },
+            "to_team": {
+                "id": "583ecdfb-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Clippers",
+                "market": "Los Angeles"
+            }
+        }, {
+            "id": "df517317-74bc-4040-8c62-80183bf1608a",
+            "desc": "The Dallas Mavericks traded G DeAndre Liggins to the Houston Rockets.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T21:37:10+00:00",
+            "from_team": {
+                "id": "583ecf50-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Mavericks",
+                "market": "Dallas"
+            },
+            "to_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            }
+        }]
+    }, {
+        "id": "763a755f-17b4-4f76-a36f-21f9fb6a6d44",
+        "full_name": "Sam Dekker",
+        "first_name": "Sam",
+        "last_name": "Dekker",
+        "position": "F",
+        "primary_position": "SF",
+        "transfers": [{
+            "id": "a6e375eb-46c3-467c-96e4-98c6675517fa",
+            "desc": "The Houston Rockets traded F Sam Dekker to the Los Angeles Clippers.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T21:38:32+00:00",
+            "from_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            },
+            "to_team": {
+                "id": "583ecdfb-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Clippers",
+                "market": "Los Angeles"
+            }
+        }]
+    }, {
+        "id": "869c305c-3e1f-49e5-a59b-5f1e03d198f8",
+        "full_name": "Montrezl Harrell",
+        "first_name": "Montrezl",
+        "last_name": "Harrell",
+        "position": "F",
+        "primary_position": "PF",
+        "transfers": [{
+            "id": "b32f38b4-183c-421f-9c14-f0512fa5af7d",
+            "desc": "The Houston Rockets traded F Montrezl Harrell to the Los Angeles Clippers.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T21:40:45+00:00",
+            "from_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            },
+            "to_team": {
+                "id": "583ecdfb-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Clippers",
+                "market": "Los Angeles"
+            }
+        }]
+    }, {
+        "id": "881d2b4a-0547-490e-9c07-6694b79286b4",
+        "full_name": "Darrun Hilliard",
+        "first_name": "Darrun",
+        "last_name": "Hilliard",
+        "position": "G-F",
+        "primary_position": "SF",
+        "transfers": [{
+            "id": "1fbd2fba-9dac-4546-8c9b-ed47b9cc9763",
+            "desc": "The Houston Rockets traded G-F Darrun Hilliard to the Los Angeles Clippers.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T21:41:27+00:00",
+            "from_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            },
+            "to_team": {
+                "id": "583ecdfb-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Clippers",
+                "market": "Los Angeles"
+            }
+        }, {
+            "id": "a54ee693-4a1b-418a-b3cc-cf7e2a976e82",
+            "desc": "The Detroit Pistons traded G-F Darrun Hilliard to the Houston Rockets.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T19:52:02+00:00",
+            "from_team": {
+                "id": "583ec928-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Pistons",
+                "market": "Detroit"
+            },
+            "to_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            }
+        }, {
+            "id": "b5a80ef7-d85c-495e-97ae-34f9eb4fb09c",
+            "desc": "The Houston Rockets traded G-F Darrun Hilliard to the Los Angeles Clippers.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T21:41:34+00:00",
+            "from_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            },
+            "to_team": {
+                "id": "583ecdfb-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Clippers",
+                "market": "Los Angeles"
+            }
+        }]
+    }, {
+        "id": "912e7aa3-dd03-4a98-9980-0442e108f287",
+        "full_name": "Patrick Beverley",
+        "first_name": "Patrick",
+        "last_name": "Beverley",
+        "position": "G",
+        "primary_position": "PG",
+        "transfers": [{
+            "id": "e97fdc89-bcb4-4335-96f0-c3475b82a1d8",
+            "desc": "The Houston Rockets traded G Patrick Beverley to the Los Angeles Clippers.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T21:38:10+00:00",
+            "from_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            },
+            "to_team": {
+                "id": "583ecdfb-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Clippers",
+                "market": "Los Angeles"
+            }
+        }]
+    }, {
+        "id": "942c53e3-7268-44e3-b0a9-fdff55a72c03",
+        "full_name": "Chris Paul",
+        "first_name": "Chris",
+        "last_name": "Paul",
+        "position": "G",
+        "primary_position": "PG",
+        "transfers": [{
+            "id": "16f9cd10-87a7-40e2-9060-3b7fe7e0f27a",
+            "desc": "The Los Angeles Clippers traded G Chris Paul to the Houston Rockets.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T21:37:42+00:00",
+            "from_team": {
+                "id": "583ecdfb-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Clippers",
+                "market": "Los Angeles"
+            },
+            "to_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            }
+        }]
+    }, {
+        "id": "96811efd-59a8-4f97-bdcc-7c6c1f654306",
+        "full_name": "Kyle Wiltjer",
+        "first_name": "Kyle",
+        "last_name": "Wiltjer",
+        "position": "F",
+        "primary_position": "SF",
+        "transfers": [{
+            "id": "89078f00-77b0-40b4-8cca-27053fe92c5d",
+            "desc": "The Houston Rockets traded F Kyle Wiltjer to the Los Angeles Clippers.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T21:42:56+00:00",
+            "from_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            },
+            "to_team": {
+                "id": "583ecdfb-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Clippers",
+                "market": "Los Angeles"
+            }
+        }]
+    }, {
+        "id": "f53005a6-fdb2-4457-823a-7765cecb6cbd",
+        "full_name": "Shawn Long",
+        "first_name": "Shawn",
+        "last_name": "Long",
+        "position": "F-G",
+        "primary_position": "PF",
+        "transfers": [{
+            "id": "fba8d197-3f3b-4c7f-98a4-72028823752b",
+            "desc": "The Philadelphia 76ers traded F-G Shawn Long to the Houston Rockets.",
+            "effective_date": "2017-06-28",
+            "last_modified": "2017-06-28T20:48:13+00:00",
+            "from_team": {
+                "id": "583ec87d-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "76ers",
+                "market": "Philadelphia"
+            },
+            "to_team": {
+                "id": "583ecb3a-fb46-11e1-82cb-f4ce4684ea4c",
+                "name": "Rockets",
+                "market": "Houston"
+            }
+        }]
+    }]
+}
