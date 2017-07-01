@@ -28,5 +28,21 @@ app.get('/trades', (req, res) => {
   .catch(console.error);
 });
 
+app.get('/trades/league', (req, res) => {
+  let sqlReq = 'Some more shit';
+
+  client.query(sqlReq)
+  .then(result => res.send(result.rows))
+  .catch(console.error);
+});
+
+app.get('/trades/team', (req, res) => {
+  let sqlReq = 'EVEN MORE SHIT!!!';
+
+  client.query(sqlReq)
+  .then(result => res.send(result.rows))
+  .catch(console.error);
+});
+
 
 app.listen(PORT, () => console.log('Server Active!'));

@@ -11,7 +11,7 @@ var app = app||{};
   Player.all = [];
 
   Player.process = function(data) {
-    Player.all = data.forEach(val => new Player(val))
+    Player.all = data.forEach(val => new Player(val));
   };
 
   Player.fetch = function() {
@@ -20,6 +20,18 @@ var app = app||{};
       Player.process(data);
     });
   };
+
+  Player.fetchLeague = function(field, value, callback) {
+    $.get('trades/league', {field: field, val: value})
+    .then(callback);
+  };
+
+  Player.fetchLeague = function(field, value, callback) {
+    $.get('trades/team', {field: field, val: value})
+    .then(callback);
+  };
+
+
 
 
   module.Trae = Player;
