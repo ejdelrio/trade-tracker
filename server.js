@@ -17,7 +17,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
-app.get('*', () => console.log('ok?'));
+app.get('*', (req, res) =>
+res.sendFile('index.html', {root: './public'}));
+
+app.get('/trades', (req, res) => {
+  let sqlReq = 'Some shit';
+
+  client.query(sqlReq)
+  .then(result => res.send(result.rows))
+  .catch(console.error);
+});
 
 
 app.listen(PORT, () => console.log('Server Active!'));
