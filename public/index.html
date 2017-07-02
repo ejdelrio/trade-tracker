@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/normalize.css">
+    <script id="handle-template" type="text/x-handlebars-templates">
+      <div class="test">
+        <h2>{{full_name}}</h2>
+    </script>
+    <title>Trade Tracker</title>
   </head>
   <body>
+    <header>
+      <span class="name-app">Trade Tracker</span>
+      <img class="logo" src="http://placehold.it/100x100">
+      <nav>
+        <ul>
+          <li><a href="#">Home</li>
+          <li><a href="#">About Us</li>
+          <li><a href="#">Contact Us</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <select>
+      <option value="#">Select A Sport</option>
+      <option value="#">Basketball</option>
+      <option value="#">Baseball</option>
+      <option value="#">Hockey</option>
+    </select>
+    </main>
 
   </body>
   <script src="/scripts/lib/jquery.js"></script>
   <script src="/scripts/lib/handlebars.js"></script>
   <script src="/scripts/lib/page.js"></script>
-  <script src="/scripts/controllers/tabController.js">
-
-  </script>
+  <script src="/scripts/controllers/tabController.js"></script>
+  <script>"/scripts/models/sampleJSON.json"</script>
 </html>
