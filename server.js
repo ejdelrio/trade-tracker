@@ -7,7 +7,7 @@ const pg = require('pg');
 const app = express();
 const PORT = process.env.PORT ||3000;
 
-// const connString = 'Whatever';
+// const connString = process.env.'I cant remember';
 // const client = new pg.Client(connString);
 //
 // client.connect();
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
-app.get('*', (req, res) =>
+app.get('/', (req, res) =>
 res.sendFile('index.html', {root: './public'}));
 
 app.get('/trades', (req, res) => {
@@ -46,3 +46,7 @@ app.get('/trades/team', (req, res) => {
 
 
 app.listen(PORT, () => console.log('Server Active!'));
+
+fs.readFile('./public/scripts/models/sampleJSON.json', (err, fd) => {
+  console.log(fd.toString());
+});

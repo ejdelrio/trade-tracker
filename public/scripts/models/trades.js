@@ -34,5 +34,5 @@ var app = app||{};
 
 
 
-  module.Trae = Player;
+  module.Trade = Player;
 })(app);
