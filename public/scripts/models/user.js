@@ -14,7 +14,9 @@ var app = app||{};
     this.favorites = [];
   }
 
-  newUser.create = function() {};
+  newUser.create = function() {
+    
+  };
 
 
   module.newUser = newUser;
