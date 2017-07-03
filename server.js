@@ -37,7 +37,9 @@ app.get('/password', (req, res)=> {
   client.query('SELECT hash FROM tablename WHERE username=$1',
   [req.body.username])
   .then(result => {
-    result.row[0];
+    bcrypt.compare(req.password, result.row[0].hash, (err, valid) => {
+      res.body.valid  = valid ? result.row[0] : false;
+    });
 });
 
 app.post('new_profile', (req, res) => {
