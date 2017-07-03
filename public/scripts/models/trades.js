@@ -18,7 +18,6 @@ var app = app||{};
   Player.fetch = function() {
     $.get('/trades')
     .then(data => {
-      console.log(data[0].players);
       Player.process(data[0].players, data[0].league.name);
     });
   };
