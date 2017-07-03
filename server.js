@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const pg = require('pg');
+const bcrypt = require('bcrypt');
 const app = express();
 const PORT = process.env.PORT ||3000;
 
@@ -62,7 +63,3 @@ app.get('/trades/team', (req, res) => {
 
 
 app.listen(PORT, () => console.log('Server Active!'));
-
-// fs.readFile('./public/scripts/models/sampleJSON.json', (err, fd) => {
-//   console.log(fd.toString());
-// });
