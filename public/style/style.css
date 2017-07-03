@@ -1,0 +1,22 @@
+header {
+  outline: dotted 2px black;
+  background: #444;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+.name-app {
+  font-size:5vw;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 2vw;
+}
+a:hover {
+  color: hotpink;
+  text-decoration: overline;
+}
