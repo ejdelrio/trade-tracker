@@ -21,11 +21,15 @@ app.get('/', (req, res) =>
 res.sendFile('index.html', {root: './public'}));
 
 app.get('/trades', (req, res) => {
-  let sqlReq = 'Some shit';
+  let test;
+  fs.readFile('/public/scripts/models/sampleJSON.json', (err, data) => {
+    test = JSON.parse(data.toString());
+  });
+  res.send(test);
 
-  client.query(sqlReq)
-  .then(result => res.send(result.rows))
-  .catch(console.error);
+  // client.query(sqlReq)
+  // .then(result => res.send(result.rows))
+  // .catch(console.error);
 });
 
 app.get('/trades/league', (req, res) => {
