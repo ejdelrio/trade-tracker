@@ -10,22 +10,22 @@ const app = express();
 const PORT = process.env.PORT ||3000;
 const saltRounds = 10;
 
+
+const connString = process.env.DB;
+const client = new pg.Client(connString);
+
+client.connect();
+client.on('error', (err) => console.log(err));
+
 var proxyTwitter = function(request, response) {
   (requestProxy({
-    url: 'https://api.twitter.com/1.1/search/tweets.json?q=%40bacon'
+    url: 'https://api.twitter.com/1.1/search/tweets.json?q=%40bacon',
     json: true,
     headers: {
       'Authorization': 'Bearer <token>'
     }
   }))(request, response);
 };
-
-
-const connString = process.env.DB;
-const client = new pg.Client(connString);
-
-client.connect();
-client('error', (err) => console.log(err));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
