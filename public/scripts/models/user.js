@@ -18,7 +18,7 @@ var app = app||{};
   newUser.create = function(e) {
     e.preventDefault();
     let account = new User($('#new-profile input'));
-    $.get('/new_profile/validate', account)
+    $.get('/validate', account)
     .then(res => {
       !res.body.available ? alert('User name is taken') : newUser.postUser(account);
     });

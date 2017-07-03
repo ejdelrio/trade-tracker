@@ -7,6 +7,7 @@ const pg = require('pg');
 const bcrypt = require('bcrypt');
 const app = express();
 const PORT = process.env.PORT ||3000;
+const saltRounds = 10;
 
 // const connString = process.env.'I cant remember';
 // const client = new pg.Client(connString);
@@ -21,14 +22,32 @@ app.use(express.static('./public'));
 app.get('/', (req, res) =>
 res.sendFile('index.html', {root: './public'}));
 
-app.get('new_profile/validate', (req, res) => {
-  client.query('SELECT username FROM tablename WHERE username=$1', [req.body.username]).then(result => {
+app.get('/validate', (req, res) => {
+
+  client.query('SELECT username FROM tablename WHERE username=$1',
+  [req.body.username])
+  .then(result => {
     res.body.available = result.rows.length === 0 ?  false : true;
-  }).catch(err => console.log(err));
+  })
+  .catch(err => console.log(err));
+});
+
+app.get('/password', (req, res)=> {
+
+  client.query('SELECT hash FROM tablename WHERE username=$1',
+  [req.body.username])
+  .then(result => {
+    bcrypt.compare(req.password, result.row[0].hash, (err, valid) => {
+      res.body.valid  = valid ? result.row[0] : false;
+    });
 });
 
 app.post('new_profile', (req, res) => {
-  client.query('INSERT INTO table(values) VALUES(...) ON CONFLICT DO NOTHING', [], (err) => {
+  bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
+    req.body.hash = hash});
+  client.query('INSERT INTO table(first, last, email, userName, hash) VALUES($1, $2, $3, $4, $5, $6) ON CONFLICT DO NOTHING',
+  [req.body.first, req.body.last, req.body.email, req.body.userName, req.body.hash],
+  (err) => {
     if(err) {
       console.log(err);
     }
