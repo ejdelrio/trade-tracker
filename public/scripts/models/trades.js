@@ -4,21 +4,22 @@ var app = app||{};
 
 (function(module) {
 
-  function Player(obj) {
+  function Player(obj, league) {
     Object.keys(obj).forEach(key => this[key] = obj[key]);
+    this.league = league;
   }
 
   Player.all = [];
 
-  Player.process = function(data) {
-    Player.all = data.map(val => new Player(val));
+  Player.process = function(data, league) {
+    Player.all = data.map(val => new Player(val, league));
   };
 
   Player.fetch = function() {
     $.get('/trades')
     .then(data => {
       console.log(data[0].players);
-      Player.process(data[0].players);
+      Player.process(data[0].players, data[0].league.name);
     });
   };
 
