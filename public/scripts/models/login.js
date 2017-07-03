@@ -14,16 +14,15 @@ var app = app||{};
     attempt.passWord = $login.find('input').last().val();
     $.get('/validate', attempt)
     .then(res => {
-      !res ? alert('User name does not exist!') :
+      !res ? alert('User name does not exist!') : login.verifyPass(attempt);
     });
-  }
+  };
 
   login.verifyPass = (password) => {
-    $.get('/password', password).then(callback);
-  }
+    $.get('/password', password);
+  };
 
-
-
+  $login.find('button').on('click',login.verifyUser);
 
   module.login = login;
 })(app);
