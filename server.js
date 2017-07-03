@@ -19,10 +19,10 @@ client.on('error', (err) => console.log(err));
 
 var proxyTwitter = function(request, response) {
   (requestProxy({
-    url: 'https://api.twitter.com/1.1/search/tweets.json?q=%40bacon',
+    url: 'https://api.twitter.com/1.1/search/tweets.json?q=' + request.params[0],
     json: true,
     headers: {
-      'Authorization': 'Bearer <token>'
+      'Authorization': `Bearer ${process.env.BEARER_TOKEN}`
     }
   }))(request, response);
 };
@@ -30,6 +30,8 @@ var proxyTwitter = function(request, response) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
+
+app.get('/search/*', proxyTwitter);
 
 app.get('/', (req, res) =>
 res.sendFile('index.html', {root: './public'}));
