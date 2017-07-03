@@ -23,20 +23,29 @@ app.get('/', (req, res) =>
 res.sendFile('index.html', {root: './public'}));
 
 app.get('/validate', (req, res) => {
-  client.query('SELECT username FROM tablename WHERE username=$1', [req.body.username]).then(result => {
+
+  client.query('SELECT username FROM tablename WHERE username=$1',
+  [req.body.username])
+  .then(result => {
     res.body.available = result.rows.length === 0 ?  false : true;
-  }).catch(err => console.log(err));
+  })
+  .catch(err => console.log(err));
 });
 
 app.get('/password', (req, res)=> {
-  client.query('SELECT hash FROM tablename WHERE username=$1', [req.body.username]).then(result => {
+
+  client.query('SELECT hash FROM tablename WHERE username=$1',
+  [req.body.username])
+  .then(result => {
     result.row[0];
 });
 
 app.post('new_profile', (req, res) => {
   bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
     req.body.hash = hash});
-  client.query('INSERT INTO table(first, last, email, userName, hash) VALUES($1, $2, $3, $4, $5, $6) ON CONFLICT DO NOTHING', [req.body.first, req.body.last, req.body.email, req.body.userName, req.body.hash], (err) => {
+  client.query('INSERT INTO table(first, last, email, userName, hash) VALUES($1, $2, $3, $4, $5, $6) ON CONFLICT DO NOTHING',
+  [req.body.first, req.body.last, req.body.email, req.body.userName, req.body.hash],
+  (err) => {
     if(err) {
       console.log(err);
     }
