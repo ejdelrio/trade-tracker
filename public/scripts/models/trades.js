@@ -11,13 +11,14 @@ var app = app||{};
   Player.all = [];
 
   Player.process = function(data) {
-    Player.all = data.forEach(val => new Player(val));
+    Player.all = data.map(val => new Player(val));
   };
 
   Player.fetch = function() {
     $.get('/trades')
     .then(data => {
-      Player.process(data);
+      console.log(data[0].players);
+      Player.process(data[0].players);
     });
   };
 

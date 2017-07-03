@@ -21,11 +21,9 @@ app.get('/', (req, res) =>
 res.sendFile('index.html', {root: './public'}));
 
 app.get('/trades', (req, res) => {
-  let test;
-  fs.readFile('/public/scripts/models/sampleJSON.json', (err, data) => {
-    test = JSON.parse(data.toString());
+  fs.readFile('./public/scripts/models/sampleJSON.json', (err, data) => {
+    res.send(JSON.parse(data.toString()));
   });
-  res.send(test);
 
   // client.query(sqlReq)
   // .then(result => res.send(result.rows))
@@ -51,6 +49,6 @@ app.get('/trades/team', (req, res) => {
 
 app.listen(PORT, () => console.log('Server Active!'));
 
-fs.readFile('./public/scripts/models/sampleJSON.json', (err, fd) => {
-  console.log(fd.toString());
-});
+// fs.readFile('./public/scripts/models/sampleJSON.json', (err, fd) => {
+//   console.log(fd.toString());
+// });
