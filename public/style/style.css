@@ -1,22 +1,252 @@
-header {
-  outline: dotted 2px black;
-  background: #444;
+
+* {
+  font-family: 'helvetica';
 }
 
-nav ul li {
-  list-style: none;
+.diamond_plate {
+  width: 760px;
+  position: absolute;
+}
+
+html {
+  /*background-color: #E2600D;*/
+}
+
+.bgframe {
+  position: absolute;
+}
+
+body {
+  margin: 0 auto;
+  width: 960px;
+  font-family: 'helvetica';
+}
+
+.fighter {
+  height: 100px;
+  width: 210px;
+  margin-top: 20px;
+  margin-left: 230px;
+  position: absolute;
+  z-index: 100000;
+}
+
+header {
+  margin: 0 auto;
+  width: 980px;
+  height: 107px;
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  bottom: 8px;
+  left: 240px;
+  color: #E2600D;;
+  font-size: 20px;
+}
+
+.spacer {
+  height: 6px;
+  width: 500px;
+  position: absolute;
+  bottom: 0;
+  left: 240px;
+  background-color: #E2600D;;
+  border-radius: 2px;
+}
+
+main {
+  margin: 0 auto;
+}
+
+section {
+  height: 30px;
+  width: 480px;
+  padding: 30px;
+  margin: 80px auto;
+  position: relative;
+  background: rgba(17, 17, 17, .5);
+  border: solid 3px #E2600D;
+  border-radius: 2px;
+  transition: 350ms;
+}
+
+.expand {
+  height: 210px;
+}
+
+input {
+  height: 30px;
+  width: 180px;
+  border: solid 1px #E2600D;
+  border-radius: 2px;
+}
+
+form {
+  position: relative;
+}
+
+#twitOne {
+ position: absolute;
+ top: 0;
+ left: 0;
+ display: inline-block;
+ transition: 350ms;
+}
+
+#twitTwo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  transition: 350ms;
+}
+
+#toggler {
+  width: 90px;
+  height: 30px;
+  position: absolute;
+  top: 2px;
+  left: 195px;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 10px;
+  background: #E2600D;
+}
+
+.center {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  background: none;
+  border: none;
+}
+
+.show {
+  width: 480px;
+  height: 180px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+#tweet_cal {
+  position: relative;
+}
+
+#cal_title {
+  opacity: 0;
+  transition: 350ms;
+  position: absolute;
+  top: 40px;
+  left: 170px;
+  font-size: 12px;
+  color: #fff;
+}
+
+#calendar {
+  position: absolute;
+  top: 48px;
+  left: 106px;
+}
+
+.expand #cal_title {
+  transition: 500ms;
+  opacity: 1;
+}
+
+.expand #cal_title span {
+  width: 220px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  float: left;
   display: inline-block;
 }
 
-.name-app {
-  font-size:5vw;
+.show span {
+  width: 202px;
+  height: 30px;
+  margin-top: 30px;
+  color: #fff;
+  display: inline-block;
+  float: left;
+  transition: 350ms;
 }
-li a {
-  text-decoration: none;
-  color: white;
-  font-size: 2vw;
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin: 22px 22px 0 22px;
+  position: relative;
+  border: none;
+  display: inline-block;
+  float: left;
+  transition: 350ms;
 }
-li a:hover {
-  color: red;
-  text-decoration: overline;
+
+.legend {
+  width: 50px !important;
+  height: 20px !important;
+  display: inline-block;
+  position: absolute;
+  right: 245px;
+  font-size: 10px;
+  color: #ddd !important;
 }
+
+#retweets_legend {
+  top: 121px;
+}
+
+#warscore_legend{
+  top: 182px;
+}
+
+.winner {
+  font-weight: bold;
+  color: #E2600D !important;
+  text-shadow: 1px 1px .5px #888;
+}
+
+.loser {
+  opacity: .75;
+  color: #ddd;
+}
+
+.grand_winner {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  text-align: center;
+  background: none;
+  border: none;
+  text-shadow: 1px 1px .5px #888;
+  color: #E2600D;
+}
+
+.grand_loser {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  text-align: center;
+  background: none;
+  border: none;
+  opacity: .75;
+  color: #ddd;
+}
+
+/*.fade_in {
+  animation: fadein 350ms;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}*/

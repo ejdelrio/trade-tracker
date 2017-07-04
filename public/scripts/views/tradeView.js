@@ -20,7 +20,7 @@ var app = app || {};
     return template(team);
   };
 
-  
+
 
   module.tradeView = tradeView;
 })(app);
