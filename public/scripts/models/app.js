@@ -29,31 +29,36 @@ function submitSearch(event){
 form.addEventListener('submit', submitSearch);
 
 Twit.prototype.calcTweetScores = function(){
-  for (var i=0; i<this.tweets.length; i++){
-    var totTweetFavScore = favouritePoints * this.tweets[i].favourites_count;
-    var totTweetRTScore = reTweetPoints * this.tweets[i].retweet_count;
-    this.tweets[i].faveScore = totTweetFavScore;
-    this.tweets[i].rTScore = totTweetRTScore;
-    this.tweets[i].tweetWarScore = totTweetRTScore + totTweetFavScore;
-  }
+  this.tweets.map(tweet => {
+    tweet.faveScore = tweet.favourites_count * favouritePoints;
+    tweet.rTScore = tweet.retweet_count * reTweetPoints;
+    tweet.tweetWarScore = tweet.faveScore + tweet.rTScore;
+  });
+  // for (var i=0; i<this.tweets.length; i++){
+  //   var totTweetFavScore = favouritePoints * this.tweets[i].favourites_count;
+  //   var totTweetRTScore = reTweetPoints * this.tweets[i].retweet_count;
+  //   this.tweets[i].faveScore = totTweetFavScore;
+  //   this.tweets[i].rTScore = totTweetRTScore;
+  //   this.tweets[i].tweetWarScore = totTweetRTScore + totTweetFavScore;
+  // }
 };
 
 Twit.prototype.convertDates = function(){
-  for (var i=0; i<this.tweets.length; i++){
-    var twitDate = this.tweets[i].created_at;
-    var twitDateSplit = twitDate.split(' ');
-    var jsDate = twitDateSplit[0] + ' ' + twitDateSplit[1] + ' ' + twitDateSplit[2] + ' ' + twitDateSplit[5] + ' ' + twitDateSplit[3] + ' GMT' + twitDateSplit[4];
-    console.log(jsDate);
-    this.tweets[i].datetimesent = new Date(jsDate);
-    console.log(this.tweets[i].datetimesent);
-  }
+  this.tweets.map(tweet => {
+    let twitDate = tweet.created_at.split(' ');
+    tweet.datetimesent = new Date(`${twitDate[0]} ${twitDate[1]} ${twitDate[2]} ${twitDate[5]} ${twitDate[3]} GMT${twitDate[4]}`)
+    console.log(tweet.datetimesent);
+  })
 };
 
 Twit.prototype.setTimestamp = function(){
-  for (var i=0; i<this.tweets.length; i++){
-    var twitDate = this.tweets[i].datetimesent;
-    this.tweets[i].timestamp = twitDate.getTime();
-  }
+  this.tweets.map(tweet => {
+    tweet.timestamp = tweet.datetimesent.getTime();
+  })
+  // for (var i=0; i<this.tweets.length; i++){
+  //   var twitDate = this.tweets[i].datetimesent;
+  //   this.tweets[i].timestamp = twitDate.getTime();
+  // }
 };
 
 Twit.prototype.sortDates = function(){
@@ -63,9 +68,9 @@ Twit.prototype.sortDates = function(){
 };
 
 Twit.prototype.tweetsByMonth = function(date){
-  var clickedDate = date.toString().split(' ');
+  let clickedDate = date.toString().split(' ');
   for (var i=0; i<this.tweets.length; i){
-    var tweetDate = this.tweets[i].datetimesent.toString().split(' ');
+    let tweetDate = this.tweets[i].datetimesent.toString().split(' ');
     if (clickedDate[1] === tweetDate[1] && clickedDate[3] === tweetDate[3]){
       console.log('Do not remove');
       i++;
@@ -80,11 +85,11 @@ Twit.prototype.totalsForWar = function(){
   var totFavourites = 0;
   var totReTweets = 0;
   var totWarScore = 0;
-  for (var i=0; i<this.tweets.length; i++){
-    totFavourites = totFavourites + this.tweets[i].favourites_count;
-    totReTweets = totReTweets + this.tweets[i].retweet_count;
-    totWarScore = totWarScore + this.tweets[i].tweetWarScore;
-  }
+  this.tweets.map(tweet => {
+    totFavourites += tweet.favourites_count;
+    totReTweets += tweet.retweet_count;
+    totWarScore += tweet.tweetWarScore;
+  })
   this.favourites = totFavourites;
   this.reTweets = totReTweets;
   this.warScore = totWarScore;
@@ -138,10 +143,10 @@ function sortActiveTweets(){
 
 function calData(){
   var calData = {};
-  for (var i=0; i<activeTweets.length; i++){
-    var calTimestamp = Math.floor(activeTweets[i].timestamp / 1000);
+  activeTweets.map(tweet => {
+    let calTimestamp = Math.floor(tweet.timestamp / 1000);
     calData[calTimestamp] = 1;
-  }
+  })
   return calData;
 }
 
