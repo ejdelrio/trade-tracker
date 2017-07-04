@@ -11,7 +11,7 @@ const PORT = process.env.PORT ||3000;
 const saltRounds = 10;
 
 
-const connString = process.env.DB;
+const connString = process.env.DATABASE;
 const client = new pg.Client(connString);
 
 client.connect();
@@ -72,31 +72,21 @@ app.post('new_profile', (req, res) => {
   });
 });
 
-// app.get('/trades', (req, res) => {
-//   fs.readFile('./public/scripts/models/sampleJSON.json', (err, data) => {
-//     res.send(JSON.parse(data.toString()));
-//   });
-//
-//   // client.query(sqlReq)
-//   // .then(result => res.send(result.rows))
-//   // .catch(console.error);
-// });
-//
-// app.get('/trades/league', (req, res) => {
-//   let sqlReq = 'Some more shit';
-//
-//   client.query(sqlReq)
-//   .then(result => res.send(result.rows))
-//   .catch(console.error);
-// });
-//
-// app.get('/trades/team', (req, res) => {
-//   let sqlReq = 'EVEN MORE SHIT!!!';
-//
-//   client.query(sqlReq)
-//   .then(result => res.send(result.rows))
-//   .catch(console.error);
-// });
-
-
 app.listen(PORT, () => console.log('Server Active!'));
+
+//-----------DataBase Loaders
+
+function createUserTable() {
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    users (
+      user_id SERIAL PRIMARY KEY,
+      first_name VARCHAR(255) NOT NULL,
+      last_name VARCHAR(255) NOT NULL,
+      email VARCHAR(255) NOT NULL,
+      user_name VARCHAR(255) UNIQUE NOT NULL,
+      hash VARCHAR(255) NOT NULL
+    );`
+  )
+  .catch(console.error);
+}
