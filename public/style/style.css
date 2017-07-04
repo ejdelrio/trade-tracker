@@ -11,12 +11,12 @@ nav ul li {
 .name-app {
   font-size:5vw;
 }
-a {
+li a {
   text-decoration: none;
   color: white;
   font-size: 2vw;
 }
-a:hover {
-  color: hotpink;
+li a:hover {
+  color: red;
   text-decoration: overline;
 }
