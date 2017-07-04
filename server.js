@@ -18,13 +18,15 @@ client.connect();
 client.on('error', (err) => console.log(err));
 
 var proxyTwitter = function(request, response) {
+  console.log('proxyTwitter!!!!');
   (requestProxy({
-    url: 'https://api.twitter.com/1.1/search/tweets.json?q=' + request.params[0],
+    url: 'https://api.twitter.com/1.1/search/' + request.params[0],
     json: true,
     headers: {
       'Authorization': `Bearer ${process.env.BEARER_TOKEN}`
     }
   }))(request, response);
+  console.log(request.params[0]);
 };
 
 app.use(bodyParser.json());
