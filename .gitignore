@@ -144,3 +144,4 @@ $RECYCLE.BIN/
 /node_modules
 /token.js
 package.json
+bearertoken.js
