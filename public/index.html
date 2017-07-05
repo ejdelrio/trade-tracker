@@ -28,12 +28,12 @@ ChangeIt();
 
       <nav>
         <ul class="nav-bar">
-          <li class="tab" data-content="home"><a href="/">Home</a></li>
-          <li class="tab" data-content="login"><a href="/login">Log-In</a></li>
-          <li class="tab" data-content="about"><a href="/about">About Us</a></li>
+          <li class="tab" data-content="home"><a href="home">Home</a></li>
+          <li class="tab" data-content="login"><a href="login">Log-In</a></li>
+          <li class="tab" data-content="about"><a href="about">About Us</a></li>
         </ul>
 
-        <div id="login-page">
+        <div id="login">
           <form action="./scripts/models/login.js">
             <div class="login-container">
               <label>Username</label>
@@ -51,7 +51,7 @@ ChangeIt();
     </header>
 
     <main>
-      <section id="display">
+      <section id="home">
         <form id="form">
           <input id="twitOne" type="text" name="twitOne" placeholder="enter @twitter handle" autocomplete="off">
 
@@ -92,8 +92,10 @@ ChangeIt();
   <script src="./scripts/lib/handlebars.js"></script>
   <script src="./scripts/lib/page.js"></script>
   <script src="./scripts/lib/cal-heatmap-master/cal-heatmap.min.js"></script>
-  <script src="./scripts/controllers/tabController.js"></script>
+  <!-- <script src="./scripts/controllers/tabController.js"></script> -->
   <script src="./scripts/controllers/loginController.js"></script>
+  <script src="./scripts/controllers/homeController.js"></script>
+
   <script src="./scripts/models/sampletweets.js"></script>
   <script src="./scripts/models/app.js"></script>
   <script src="./scripts/controllers/routes.js"></script>
