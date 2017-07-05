@@ -11,9 +11,7 @@ var app = app||{};
   Tweeter.all = [];
 
   Tweeter.getTweeter = function(searchVal) {
-    $.get(`/search/${searchVal}`, (req, res) => {
-      res.body = token;
-    });
+    $.get(`/search/${searchVal}`).then(data => console.log(data));
   };
 
   module.Tweeter = Tweeter;
