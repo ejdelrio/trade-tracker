@@ -19,8 +19,7 @@ function submitSearch(event){
   twitOne = event.target.twitOne.value.toUpperCase();
   twitTwo = event.target.twitTwo.value.toUpperCase();
   assignTwits(twitOne, twitTwo);
-  fetchTweets();
-  results();
+  fetchTweets(results);
   // form.reset();
 }
 
@@ -28,12 +27,13 @@ form.addEventListener('submit', submitSearch);
 
 Twit.prototype.calcTweetScores = function(){
   this.tweets.map(tweet => {
+    console.log('calTweetScores Inside');
     tweet.faveScore = tweet.favorite_count * favouritePoints;
     tweet.rTScore = tweet.retweet_count * reTweetPoints;
     tweet.tweetWarScore = tweet.faveScore + tweet.rTScore;
   });
 
-  console.log('calcTweetScores');
+  console.log('calcTweetScores Outside');
 };
 
 Twit.prototype.convertDates = function(){
@@ -89,12 +89,12 @@ function Twit(screen_name){
   this.tweets = [];
 }
 
-function fetchTweets() {
+function fetchTweets(callback) {
   $.get(`/search/tweets.json?q=from%3A%40${twitOne}%20%40${twitTwo}&src=typd`)
   .then(data => {
     twitOneObj.tweets = data.statuses;
   })
-  .then($.get(`/search/tweets.json?q=from%3A%40${twitTwo}%20%40${twitOne}&src=typd`).then(data => twitTwoObj.tweets = data.statuses));
+  .then($.get(`/search/tweets.json?q=from%3A%40${twitTwo}%20%40${twitOne}&src=typd`).then(data => twitTwoObj.tweets = data.statuses).then(callback));
 }
 
 function assignTwits(twitOne, twitTwo){
