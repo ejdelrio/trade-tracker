@@ -5,23 +5,21 @@
 var form = document.getElementById('form'); //changed the name of this variable to match mine
 var twitOne = '';
 var twitTwo = '';
-var twitOneObj;
-var twitTwoObj;
-var returnedTweets = JSON.parse(tweets);
+var twitOneObj = twitOneObj || {};
+var twitTwoObj = twitTwoObj || {};
 var favouritePoints = 1;
 var reTweetPoints = 1.5;
 var activeTweets = [];
+var Twit = Twit || {};
 
 //user click
 function submitSearch(event){
   event.preventDefault();
 
   twitOne = event.target.twitOne.value.toUpperCase();
-  twitOne = twitOne.replace('@','');
   twitTwo = event.target.twitTwo.value.toUpperCase();
-  twitTwo = twitTwo.replace('@','');
   assignTwits(twitOne, twitTwo);
-  sortTweets(returnedTweets, twitOne, twitTwo);
+  fetchTweets();
   results();
   // form.reset();
 }
@@ -98,6 +96,14 @@ Twit.prototype.totalsForWar = function(){
 function Twit(screen_name){
   this.screen_name = screen_name.toUpperCase();
   this.tweets = [];
+}
+
+function fetchTweets() {
+  $.get(`/search/tweets.json?q=from%3A%40${twitOne}%20%40${twitTwo}&src=typd`)
+  .then(data => {
+    twitOneObj.tweets = data.statuses;
+  })
+  .then($.get(`/search/tweets.json?q=from%3A%40${twitTwo}%20%40${twitOne}&src=typd`).then(data => twitTwoObj.tweets = data.statuses));
 }
 
 function sortTweets(returnedTweets, twitOne, twitTwo){
