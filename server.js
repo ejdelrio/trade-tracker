@@ -19,11 +19,12 @@ client.on('error', (err) => console.log(err));
 
 var proxyTwitter = function(request, response) {
   console.log('proxyTwitter!!!!');
+  console.log(request.body);
   (requestProxy({
     url: 'https://api.twitter.com/1.1/search/' + request.params[0],
     json: true,
     headers: {
-      'Authorization': `Bearer ${process.env.BEARER_TOKEN}`
+      'Authorization': `Bearer bE13U1JHOW5McVhjRmdvVmw2bTdnTGdPSjpSblhGYVBwNThLR01UYkZBbE9Sa1I3Rlh6WXVlRTdtcndpaERuendXcjJmSVpvZXo4eg==`
     }
   }))(request, response);
   console.log(request.params[0]);

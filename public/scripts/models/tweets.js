@@ -9,10 +9,7 @@ var app = app||{};
     Object.keys(tweet).forEach(key => this[key] = tweet[key]);
   };
 
-  Tweet.prototype.userMentions(user) {
-    //some stuff
-  }
-
+  
   Tweet.prototype.compileScore = function () {
 
   };

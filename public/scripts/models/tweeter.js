@@ -10,9 +10,11 @@ var app = app||{};
 
   Tweeter.all = [];
 
-  // Tweeter.getTweeter = function(searchVal) {
-  //   $.get(`/search/${searchVal}`, {param: searchVal});
-  // };
+  Tweeter.getTweeter = function(searchVal) {
+    $.get(`/search/${searchVal}`, (req, res) => {
+      res.body = token;
+    });
+  };
 
   module.Tweeter = Tweeter;
 })(app);
