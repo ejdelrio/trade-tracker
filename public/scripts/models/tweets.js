@@ -10,7 +10,7 @@ var app = app||{};
   };
 
   Tweet.prototype.userMentions(user) {
-    
+    //some stuff
   }
 
   Tweet.prototype.compileScore = function () {
