@@ -1,5 +1,7 @@
 'use strict';
 
+var app = app||{};
+
 //global variables
 
 var form = document.getElementById('form'); //changed the name of this variable to match mine
@@ -7,7 +9,7 @@ var twitOne = '';
 var twitTwo = '';
 var twitOneObj;
 var twitTwoObj;
-var returnedTweets = JSON.parse(tweets);
+var returnedTweets = JSON.parse(app.tweets);
 var favouritePoints = 1;
 var reTweetPoints = 1.5;
 var activeTweets = [];
