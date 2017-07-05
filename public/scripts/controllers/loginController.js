@@ -2,13 +2,12 @@
 var app = app || {};
 
 (function(module) {
-  const loginController = {};
+  const loginController = {}
 
-  // DONE: Define a function that hides all main section elements, and then reveals just the #about section:
-  loginController.showPage = () => {
-    $('main > section').hide();
-    $('#login-page').show();
+  loginController.init = () => {
+    $('#home').hide();
+    $('#login').show();
+    $('#about').hide();
   }
-
   module.loginController = loginController;
 })(app);
