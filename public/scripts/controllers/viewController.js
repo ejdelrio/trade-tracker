@@ -24,6 +24,8 @@ var $displayBox = $('#display_block');
 var $tweetCal = $('#tweet_cal');
 var $calTitle = $('#cal_title');
 var $calendar = $('#calendar');
+var $form = $('#form');
+var $button = $('#button');
 
 //Encapsulating the procedural rendering functions
 function renderResults() {
@@ -37,80 +39,80 @@ function renderResults() {
 }
 
 function expandAndCenter(){
-  form.removeChild(button);
-  display.setAttribute('class','expand');
-  inputTwitOne.setAttribute('class', 'center');
-  inputTwitTwo.setAttribute('class', 'center');
-  displayBox.setAttribute('class', 'show');
-  inputTwitOne.disable = true;
-  inputTwitOne.disable = true;
+  $button.hide();
+  $display.attr('class','expand');
+  $inputTwitOne.attr('class', 'center');
+  $inputTwitTwo.attr('class', 'center');
+  $displayBox.attr('class', 'show');
+  $inputTwitOne.disable = true;
+  $inputTwitOne.disable = true;
 }
 
 //Displays the data, all functions below part of the render results func ^ above ^
 function renderFavourites() {
-  favouritesOne.innerHTML = twitOneObj.favourites; //replace this with favourites method
-  favouritesTwo.innerHTML = twitTwoObj.favourites;
-  favouritesImg.setAttribute('class', 'icon');
-  favouritesImg.setAttribute('src', 'TFAssets/favourites.png');
-  favLegend.setAttribute('class', 'legend');
-  favLegend.innerHTML = 'favourites';
+  $favouritesOne.html(twitOneObj.favourites); //replace this with favourites method
+  $favouritesTwo.html(twitTwoObj.favourites);
+  $favouritesImg.attr('class', 'icon');
+  $favouritesImg.attr('src', 'TFAssets/favourites.png');
+  $favLegend.attr('class', 'legend');
+  $favLegend.html('favourites');
 }
 
 //Show winner
 function renderFavouritesWinner() {
   if (twitOneObj.favourites > twitTwoObj.favourites) {
-    favouritesOne.setAttribute('class', 'winner');
-    favouritesTwo.setAttribute('class', 'loser');
+    $favouritesOne.attr('class', 'winner');
+    $favouritesTwo.attr('class', 'loser');
   } else {
-    favouritesOne.setAttribute('class', 'loser');
-    favouritesTwo.setAttribute('class', 'winner');
+    $favouritesOne.attr('class', 'loser');
+    $favouritesTwo.attr('class', 'winner');
   }
 }
 
 function renderReTweets() {
-  reTweetsOne.innerHTML = twitOneObj.reTweets;
-  reTweetsTwo.innerHTML = twitTwoObj.reTweets;
-  reTweetsImg.setAttribute('class', 'icon');
-  reTweetsImg.setAttribute('src', 'TFAssets/retweet.png');
-  reTweetsLegend.setAttribute('class', 'legend');
-  reTweetsLegend.innerHTML = 'retweet';
+  $reTweetsOne.html(twitOneObj.reTweets);
+  $reTweetsTwo.html(twitTwoObj.reTweets);
+  $reTweetsImg.attr('class', 'icon');
+  $reTweetsImg.attr('src', 'TFAssets/retweet.png');
+  $reTweetsLegend.attr('class', 'legend');
+  $reTweetsLegend.html('retweet');
 }
 function renderReTweetsWinner(){
   if (twitOneObj.reTweets > twitTwoObj.reTweets) {
-    reTweetsOne.setAttribute('class', 'winner');
-    reTweetsTwo.setAttribute('class', 'loser');
+    $reTweetsOne.attr('class', 'winner');
+    $reTweetsTwo.attr('class', 'loser');
   } else {
-    reTweetsOne.setAttribute('class', 'loser');
-    reTweetsTwo.setAttribute('class', 'winner');
+    $reTweetsOne.attr('class', 'loser');
+    $reTweetsTwo.attr('class', 'winner');
   }
 }
 
 function renderWarScore() {
-  warScoreOne.innerHTML = twitOneObj.warScore;
-  warScoreTwo.innerHTML = twitTwoObj.warScore;
-  warScoreImg.setAttribute('class', 'icon');
-  warScoreImg.setAttribute('src', 'TFAssets/warscore.png');
-  warLegend.setAttribute('class', 'legend');
-  warLegend.innerHTML = 'warscore';
+  $warScoreOne.html(twitOneObj.warScore);
+  $warScoreTwo.html(twitTwoObj.warScore);
+  $warScoreImg.attr('class', 'icon');
+  $warScoreImg.attr('src', 'TFAssets/warscore.png');
+  $warLegend.attr('class', 'legend');
+  $warLegend.html('warscore');
 }
 
 function renderWareScoreWinner(){
   if (twitOneObj.warScore > twitTwoObj.warScore) {
-    warScoreOne.setAttribute('class', 'winner');
-    warScoreTwo.setAttribute('class', 'loser');
+    $warScoreOne.attr('class', 'winner');
+    $warScoreTwo.attr('class', 'loser');
   } else {
-    warScoreOne.setAttribute('class', 'loser');
-    warScoreTwo.setAttribute('class', 'winner');
+    $warScoreOne.attr('class', 'loser');
+    $warScoreTwo.attr('class', 'winner');
   }
 }
 
 function renderGrandWinner() {
   if (twitOneObj.warScore > twitTwoObj.warScore) {
-    inputTwitOne.setAttribute('class', 'grand_winner');
-    inputTwitTwo.setAttribute('class', 'grand_loser');
+    $inputTwitOne.attr('class', 'grand_winner');
+    $inputTwitTwo.attr('class', 'grand_loser');
   } else {
-    inputTwitOne.setAttribute('class', 'grand_loser');
-    inputTwitTwo.setAttribute('class', 'grand_winner');
+    $inputTwitOne.attr('class', 'grand_loser');
+    $inputTwitTwo.attr('class', 'grand_winner');
   }
 }
 
