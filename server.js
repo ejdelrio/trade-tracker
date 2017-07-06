@@ -23,7 +23,7 @@ var proxyTwitter = function(request, response) {
     url: 'https://api.twitter.com/1.1/search/' + request.params[0],
     json: true,
     headers: {
-      'Authorization': `Bearer `
+      'Authorization': `Bearer AAAAAAAAAAAAAAAAAAAAAJx81QAAAAAABkOxAGRAju80DRO4WzmoF%2FyBj7k%3D4SE9EQfl2WMIQLLWOx8zhzFK9Oy13p4l7tAaD5mJUDnu0Dpjip`
     }
   }))(request, response);
   console.log(request.params[0]);
