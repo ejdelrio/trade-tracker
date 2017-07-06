@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>tweet fighter</title>
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="./scripts/lib/cal-heatmap-master/cal-heatmap.css">
     <link rel="stylesheet" href="style/style.css">
+    <script id="handle-template" type="text/x-handlebars-template">
+      <div id="test" class="tab-content">
+        <h4>{{screen_name}}</h4>
+        <p>{{favourites_count}}</p>
+        <p>{{retweet_count}}</p>
+        <p>{{created_at}}</p>
+        <p>{{totalCount}}</p>
+      </div>
+    </script>
   </head>
   <body>
 
@@ -16,13 +26,46 @@ ChangeIt();
     <header>
       <img class="fighter" src="TFAssets/TweetFighter.png" alt="">
 
-      <nav><a href="#"></a></nav>
+      <nav>
+        <ul class="nav-bar">
+          <li class="tab" data-content="home"><a href="home">Home</a></li>
+          <li class="tab" data-content="login"><a href="login">Log-In</a></li>
+          <li class="tab" data-content="about"><a href="about">About Us</a></li>
+        </ul>
+
+        <div id="login">
+          <form class="log" action="./scripts/models/login.js">
+            <div class="login-container">
+              <label>Username</label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+
+              <label>Password</label>
+              <input type="password" placeholder="Enter Password" name="password" required>
+
+              <button class="submit" type="submit">Login</button>
+            </div>
+          </form>
+
+          <h2>Signup</h2>
+          <form action="index.html">
+            <div class="container">
+              <label>Email</label>
+              <input type="text" name="email" placeholder="Enter Your Email" required>
+              <label>F</label>
+              <input type="text" name="password" placeholder="Enter Your Password" required>
+              <div class="clearfix">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Sign Up</button>
+              </div>
+            </div>
+          </div>
+          </form>
 
       <p class="spacer"></p>
     </header>
 
     <main>
-      <section id="display">
+      <section id="home">
         <form id="form">
           <input id="twitOne" type="text" name="twitOne" placeholder="enter @twitter handle" autocomplete="off">
 
@@ -62,9 +105,10 @@ ChangeIt();
   <script src="./scripts/lib/jquery.js"></script>
   <script src="./scripts/lib/handlebars.js"></script>
   <script src="./scripts/lib/page.js"></script>
-  <script src="./scripts/models/sampletweets.js"></script>
-  <script src="./scripts/lib/cal-heatmap-master/cal-heatmap.min.js"></script>
   <script src="./scripts/controllers/tabController.js"></script>
   <script src="bearertoken.js"></script>
+  <script src="./scripts/controllers/loginController.js"></script>
+  <script src="./scripts/controllers/homeController.js"></script>
   <script src="./scripts/models/app.js"></script>
+  <script src="./scripts/controllers/routes.js"></script>
 </html>
