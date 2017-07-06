@@ -27,74 +27,50 @@ ChangeIt();
   <img class="fighter" src="TFAssets/TweetFighter.png" alt="">
   <nav>
     <ul class="nav-bar">
-      <li class="tab" data-content="home"><a href="home">Home</a></li>
-      <li class="tab" data-content="login"><a href="login">Log-In</a></li>
-      <li class="tab" data-content="about"><a href="about">About Us</a></li>
+      <li class="tab" data-content="home"><a href="/home">Home</a></li>
+      <li class="tab" data-content="login"><a href="/login">Log-In</a></li>
+      <li class="tab" data-content="about"><a href="/about">About Us</a></li>
     </ul>
 
-    <div id="about">
-      <section class="bio">
-        <img src="">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam inventore reprehenderit sunt ad aliquam quasi, cumque rem eaque aspernatur quidem illo harum tempore magni nostrum ut impedit iure ea quam.
-        </p>
-      </section>
-      <section class="bio">
-        <img src="placehold.it/100x100">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam inventore reprehenderit sunt ad aliquam quasi, cumque rem eaque aspernatur quidem illo harum tempore magni nostrum ut impedit iure ea quam.
-        </p>
-      </section>
-      <section class="bio">
-        <img src="">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam inventore reprehenderit sunt ad aliquam quasi, cumque rem eaque aspernatur quidem illo harum tempore magni nostrum ut impedit iure ea quam.
-        </p>
-      </section>
-    </div>
     <p class="spacer"></p>
   </header>
   <main>
     <section id="home">
       <form id="form">
         <input id="twitOne" type="text" name="twitOne" placeholder="enter @twitter handle" autocomplete="off">
-
         <input id="twitTwo" type="text" name="twitTwo" placeholder="enter @twitter handle" autocomplete="off">
-
-
         <button id="toggler" type="submit">PICK A FIGHT!</button>
       </form>
 
       <div id="tweet_cal">
         <span id=cal_title>click the month of the beef</span>
-        <div id="calendar">
-
-        </div>
+        <div id="calendar"></div>
       </div>
       <div id="display_block">
         <span id="favourites_one"></span>
         <img id="favourites_img"><span id="favourites_legend"></span>
-          <span id="favourites_two"></span>
+        <span id="favourites_two"></span>
+        <span id="retweets_one"></span>
+        <img id="retweets_img"><span id="retweets_legend"></span>
+        <span id="retweets_two"></span>
+        <span id="warscore_one"></span>
+        <img id="warscore_img"><span id="warscore_legend"></span>
+        <span id="warscore_two"></span>
+      </div>
+    </section>
 
-          <span id="retweets_one"></span>
-          <img id="retweets_img"><span id="retweets_legend"></span>
-          <span id="retweets_two"></span>
-
-          <span id="warscore_one"></span>
-          <img id="warscore_img"><span id="warscore_legend"></span>
-          <span id="warscore_two"></span>
+    <div id="login">
+      <form class="log" action="./scripts/models/login.js">
+        <div class="login-container">
+          <label>Username</label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+          <label>Password</label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+          <button class="submit" type="submit">Login</button>
         </div>
-      </section>
-      <div id="login">
-        <form class="log" action="./scripts/models/login.js">
-          <div class="login-container">
-            <label>Username</label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-            <label>Password</label>
-            <input type="password" placeholder="Enter Password" name="password" required>
+      </form>
 
-            <button class="submit" type="submit">Login</button>
-          </div>
-        </form>
-
-        <h2>Signup</h2>
+      <h2>Signup</h2>
         <form action="index.html">
           <div class="container">
             <label>Email</label>
@@ -108,7 +84,24 @@ ChangeIt();
           </div>
         </div>
         </form>
-    </main>
+      </main>
+      <div id="about">
+        <section class="bio">
+          <img src="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam inventore reprehenderit sunt ad aliquam quasi, cumque rem eaque aspernatur quidem illo harum tempore magni nostrum ut impedit iure ea quam.
+          </p>
+        </section>
+        <section class="bio">
+          <img src="placehold.it/100x100">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam inventore reprehenderit sunt ad aliquam quasi, cumque rem eaque aspernatur quidem illo harum tempore magni nostrum ut impedit iure ea quam.
+          </p>
+        </section>
+        <section class="bio">
+          <img src="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam inventore reprehenderit sunt ad aliquam quasi, cumque rem eaque aspernatur quidem illo harum tempore magni nostrum ut impedit iure ea quam.
+          </p>
+        </section>
+      </div>
 
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
