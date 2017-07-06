@@ -1,5 +1,7 @@
 'use strict';
 
-$('nav img').on('click', () => {
-  $('nav ul').slideToggle(350);
+$('#ind-tweets').hide();
+
+$('#accordion').on('click', function() {
+  $('#ind-tweets').slideToggle('fast');
 });

@@ -1,26 +1,31 @@
 'use strict';
 
-var app = app||{};
+var app = app|| {};
 
-(function(module) {
+function IFFE (module){
 
+  let Tweets = {};
+  Tweets.first = [];
+  Tweets.second = [];
 
-  const Tweet = function(tweet) {
-    Object.keys(tweet).forEach(key => this[key] = tweet[key]);
+  Tweets.compile = function(tweet) {
+    let template = Handlebars.compile($('#ind-tweet').text());
+
+    return template(tweet);
   };
 
-  Tweet.prototype.userMentions(user) {
-    
-  }
-
-  Tweet.prototype.compileScore = function () {
+  Tweets.render = function(tweet, target) {
+    console.log($(target));
+    $(target).append(Tweets.compile(tweet));
 
   };
 
-  Tweet.all = JSON.parse(app.tweets).map(tweet => new Tweet(tweet));
+  Tweets.runBoth = function() {
+    Tweets.first.forEach(tweet => Tweets.render(tweet, '#twit-one'));
+    Tweets.second.forEach(tweet => Tweets.render(tweet, '#twit-two'));
+  };
 
-
-
-
-  module.tweetObj = Tweet.all;
-})(app);
+  console.log('success');
+  module.Tweets = Tweets;
+}
+IFFE(app);

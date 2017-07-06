@@ -47,30 +47,30 @@ app.get('/validate', (req, res) => {
   })
   .catch(err => console.log(err));
 });
-
-app.get('/password', (req, res)=> {client.query('SELECT hash FROM tablename WHERE username=$1',
-  [req.body.username])
-  .then(result => {
-    bcrypt.compare(req.password, result.row[0].hash, (err, valid) => {
-      res.body.valid  = valid ? result.row[0] : false;
-    });
-  });
-});
-
-app.post('new_profile', (req, res) => {
-  bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
-    if(err) {
-      console.log(err);
-    }
-    req.body.hash = hash});
-  client.query('INSERT INTO table(first, last, email, userName, hash) VALUES($1, $2, $3, $4, $5) ON CONFLICT DO NOTHING',
-  [req.body.first, req.body.last, req.body.email, req.body.userName, req.body.hash],
-  (err) => {
-    if(err) {
-      console.log(err);
-    }
-  });
-});
+//
+// app.get('/password', (req, res)=> {client.query('SELECT hash FROM tablename WHERE username=$1',
+//   [req.body.username])
+//   .then(result => {
+//     bcrypt.compare(req.password, result.row[0].hash, (err, valid) => {
+//       res.body.valid  = valid ? result.row[0] : false;
+//     });
+//   });
+// });
+//
+// app.post('new_profile', (req, res) => {
+//   bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
+//     if(err) {
+//       console.log(err);
+//     }
+//     req.body.hash = hash});
+//   client.query('INSERT INTO table(first, last, email, userName, hash) VALUES($1, $2, $3, $4, $5) ON CONFLICT DO NOTHING',
+//   [req.body.first, req.body.last, req.body.email, req.body.userName, req.body.hash],
+//   (err) => {
+//     if(err) {
+//       console.log(err);
+//     }
+//   });
+// });
 
 app.listen(PORT, () => console.log('Server Active!'));
 
