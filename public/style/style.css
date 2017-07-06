@@ -91,7 +91,7 @@ input {
   border-radius: 2px;
 }
 
-form {
+.form {
   position: relative;
 }
 
@@ -246,11 +246,9 @@ form {
   color: #ddd;
 }
 
-/*form {
-    border: 3px solid #f1f1f1;
-}
 
-input[type=text], input[type=password] {
+
+.log input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -259,7 +257,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-button {
+.submit {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -269,11 +267,12 @@ button {
     width: 100%;
 }
 
-button:hover {
+.submit:hover {
     opacity: 0.8;
-}*/
+}
 
 .login-container {
     padding: 16px;
-    /*display: none;*/
+    margin-top: 150px;
+    float: right;
 }
