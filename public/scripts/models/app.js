@@ -16,8 +16,8 @@ var Twit = Twit || {};
 function submitSearch(event){
   event.preventDefault();
 
-  twitOne = event.target.twitOne.value.toUpperCase();
-  twitTwo = event.target.twitTwo.value.toUpperCase();
+  twitOne = event.target.twitOne.value.toUpperCase().replace('@','');
+  twitTwo = event.target.twitTwo.value.toUpperCase().replace('@','');
   assignTwits(twitOne, twitTwo);
   fetchTweets(results);
   // form.reset();
@@ -78,7 +78,7 @@ Twit.prototype.totalsForWar = function(){
     totFavourites = totFavourites + tweet.favorite_count;
     totReTweets = totReTweets + tweet.retweet_count;
     totWarScore = totWarScore + tweet.tweetWarScore;
-  })
+  });
   this.favourites = totFavourites;
   this.reTweets = totReTweets;
   this.warScore = totWarScore;
@@ -113,8 +113,6 @@ function sortActiveTweets(){
 }
 
 function results(){
-  tweetCal.removeChild(calendar);
-  tweetCal.removeChild(calTitle);
   twitOneObj.calcTweetScores();
   twitTwoObj.calcTweetScores();
   twitOneObj.totalsForWar();

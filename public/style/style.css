@@ -68,8 +68,12 @@ main {
   margin: 0 auto;
 }
 
+#button {
+  margin: 0 auto;
+}
+
 section {
-  height: 30px;
+  /*height: 30px;*/
   width: 480px;
   padding: 30px;
   margin: 80px auto;
@@ -116,7 +120,7 @@ input {
   height: 30px;
   position: absolute;
   top: 2px;
-  left: 195px;
+  left: 228px;
   border: none;
   border-radius: 2px;
   color: #fff;
