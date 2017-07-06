@@ -16,6 +16,14 @@
         <p>{{totalCount}}</p>
       </div>
     </script>
+    <script id="ind-tweet" type="text/x-handlebars-template">
+      <div id="test" class="tab-content">
+        <h4>{{screen_name}}</h4>
+        <p>{{favourites_count}}</p>
+        <p>{{retweet_count}}</p>
+        <p>{{created_at}}</p>
+    </script>
+
   </head>
   <body>
 
@@ -87,6 +95,11 @@ ChangeIt();
           <img id="warscore_img"><span id="warscore_legend"></span>
           <span id="warscore_two"></span>
         </div>
+        <div id="ind-tweets">
+          <span id="twit-one"></span>
+          <span id="twit-two"></span>
+        </div>
+
 
       </section>
     </main>
