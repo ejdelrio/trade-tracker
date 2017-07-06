@@ -10,8 +10,13 @@ var app = app||{};
 
   Tweeter.all = [];
 
-  Tweeter.getTweeter = function(searchVal) {
-    $.get(`/search/${searchVal}`).then(data => console.log(data));
+  Tweeter.getTweeters = function(twitOne, twitTwo) {
+    $.get(`/search/tweets.json?q=from%3A%40${twitOne}%20%40${twitTwo}&src=typd`)
+    .then(data => {
+      Tweeter.all.push(new Tweeter(data));
+    })
+    .then($.get(`/search/tweets.json?q=from%3A%40${twitTwo}%20%40${twitOne}&src=typd`)
+    .then(data => Tweeter.all.push(new Tweeter(data))));
   };
 
   module.Tweeter = Tweeter;
