@@ -98,7 +98,7 @@ function fetchTweets(callback) {
   .then($.get(`/search/tweets.json?q=from%3A%40${twitTwo}%20%40${twitOne}&src=typd`).then(data => {
     twitTwoObj.tweets = data.statuses;
     app.Tweets.second = data.statuses;
-  }).then(callback));
+  }).then(callback).then(() => app.tweets.runBoth));
 }
 
 function assignTwits(twitOne, twitTwo){

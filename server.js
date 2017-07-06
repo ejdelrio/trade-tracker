@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const requestProxy = require('express-request-proxy');
 const fs = require('fs');
 const pg = require('pg');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 const app = express();
 const PORT = process.env.PORT ||3000;
 const saltRounds = 10;
@@ -23,7 +23,7 @@ var proxyTwitter = function(request, response) {
     url: 'https://api.twitter.com/1.1/search/' + request.params[0],
     json: true,
     headers: {
-      'Authorization': `Bearer `
+      'Authorization': `Bearer AAAAAAAAAAAAAAAAAAAAAJx81QAAAAAABkOxAGRAju80DRO4WzmoF%2FyBj7k%3D4SE9EQfl2WMIQLLWOx8zhzFK9Oy13p4l7tAaD5mJUDnu0Dpjip`
     }
   }))(request, response);
   console.log(request.params[0]);

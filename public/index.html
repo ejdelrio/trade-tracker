@@ -17,11 +17,13 @@
       </div>
     </script>
     <script id="ind-tweet" type="text/x-handlebars-template">
-      <div id="test" class="tab-content">
-        <h4>{{screen_name}}</h4>
+      <span id="test" class="tab-content">
+        <h4>{{user.name}}</h4>
+        <p>{{text}}</p>
         <p>{{favourites_count}}</p>
         <p>{{retweet_count}}</p>
         <p>{{created_at}}</p>
+      </span>
     </script>
 
   </head>
@@ -81,15 +83,12 @@ ChangeIt();
           <img id="warscore_img"><span id="warscore_legend"></span>
           <span id="warscore_two"></span>
         </div>
-<<<<<<< HEAD
+
         <div id="ind-tweets">
           <span id="twit-one"></span>
           <span id="twit-two"></span>
         </div>
 
-
-=======
->>>>>>> 4dffbcbe3f8de602a899ef58f9bb1e779d63243b
       </section>
       <div id="login">
         <form class="log" action="./scripts/models/login.js">
@@ -126,6 +125,7 @@ ChangeIt();
   <script src="./scripts/lib/page.js"></script>
   <script src="./scripts/controllers/viewController.js"></script>
   <script src="bearertoken.js"></script>
+  <script src="./scripts/models/tweets.js"></script>
   <script src="./scripts/controllers/loginController.js"></script>
   <script src="./scripts/controllers/aboutController.js"></script>
   <script src="./scripts/controllers/homeController.js"></script>
