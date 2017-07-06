@@ -31,56 +31,42 @@
 <script type="text/javascript">
 ChangeIt();
 </script>
-    <header>
-      <img class="fighter" src="TFAssets/TweetFighter.png" alt="">
+<header>
+  <img class="fighter" src="TFAssets/TweetFighter.png" alt="">
+  <nav>
+    <ul class="nav-bar">
+      <li class="tab" data-content="home"><a href="home">Home</a></li>
+      <li class="tab" data-content="login"><a href="login">Log-In</a></li>
+      <li class="tab" data-content="about"><a href="about">About Us</a></li>
+    </ul>
 
-      <nav>
-        <ul class="nav-bar">
-          <li class="tab" data-content="home"><a href="home">Home</a></li>
-          <li class="tab" data-content="login"><a href="login">Log-In</a></li>
-          <li class="tab" data-content="about"><a href="about">About Us</a></li>
-        </ul>
-
-        <div id="login">
-          <form class="log" action="./scripts/models/login.js">
-            <div class="login-container">
-              <label>Username</label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
-
-              <label>Password</label>
-              <input type="password" placeholder="Enter Password" name="password" required>
-
-              <button class="submit" type="submit">Login</button>
-            </div>
-          </form>
-
-          <h2>Signup</h2>
-          <form action="index.html">
-            <div class="container">
-              <label>Email</label>
-              <input type="text" name="email" placeholder="Enter Your Email" required>
-              <label>F</label>
-              <input type="text" name="password" placeholder="Enter Your Password" required>
-              <div class="clearfix">
-                <button type="button" class="cancelbtn">Cancel</button>
-                <button type="submit" class="signupbtn">Sign Up</button>
-              </div>
-            </div>
-          </div>
-          </form>
-
-      <p class="spacer"></p>
-    </header>
-
+    <div id="about">
+      <section class="bio">
+        <img src="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam inventore reprehenderit sunt ad aliquam quasi, cumque rem eaque aspernatur quidem illo harum tempore magni nostrum ut impedit iure ea quam.
+        </p>
+      </section>
+      <section class="bio">
+        <img src="placehold.it/100x100">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam inventore reprehenderit sunt ad aliquam quasi, cumque rem eaque aspernatur quidem illo harum tempore magni nostrum ut impedit iure ea quam.
+        </p>
+      </section>
+      <section class="bio">
+        <img src="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam inventore reprehenderit sunt ad aliquam quasi, cumque rem eaque aspernatur quidem illo harum tempore magni nostrum ut impedit iure ea quam.
+        </p>
+      </section>
+    </div>
+    <p class="spacer"></p>
+  </header>
     <main>
       <section id="home">
         <form id="form">
           <input id="twitOne" type="text" name="twitOne" placeholder="enter @twitter handle" autocomplete="off">
           <button id="toggler" type="submit">PICK A FIGHT!</button>
           <input id="twitTwo" type="text" name="twitTwo" placeholder="enter @twitter handle" autocomplete="off">
+      </form>
 
-
-        </form>
 
         <div id="display_block">
           <span id="favourites_one"></span>
@@ -95,13 +81,42 @@ ChangeIt();
           <img id="warscore_img"><span id="warscore_legend"></span>
           <span id="warscore_two"></span>
         </div>
+<<<<<<< HEAD
         <div id="ind-tweets">
           <span id="twit-one"></span>
           <span id="twit-two"></span>
         </div>
 
 
+=======
+>>>>>>> 4dffbcbe3f8de602a899ef58f9bb1e779d63243b
       </section>
+      <div id="login">
+        <form class="log" action="./scripts/models/login.js">
+          <div class="login-container">
+            <label>Username</label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+            <label>Password</label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <button class="submit" type="submit">Login</button>
+          </div>
+        </form>
+
+        <h2>Signup</h2>
+        <form action="index.html">
+          <div class="container">
+            <label>Email</label>
+            <input type="text" name="email" placeholder="Enter Your Email" required>
+            <label>Password</label>
+            <input type="text" name="password" placeholder="Enter Your Password" required>
+            <div class="clearfix">
+              <button type="button" class="cancelbtn">Cancel</button>
+              <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+          </div>
+        </div>
+        </form>
     </main>
 
   </body>
@@ -109,10 +124,10 @@ ChangeIt();
   <script src="./scripts/lib/jquery.js"></script>
   <script src="./scripts/lib/handlebars.js"></script>
   <script src="./scripts/lib/page.js"></script>
-  <script src="./scripts/controllers/tabController.js"></script>
   <script src="./scripts/controllers/viewController.js"></script>
   <script src="bearertoken.js"></script>
   <script src="./scripts/controllers/loginController.js"></script>
+  <script src="./scripts/controllers/aboutController.js"></script>
   <script src="./scripts/controllers/homeController.js"></script>
   <script src="./scripts/models/app.js"></script>
   <script src="./scripts/controllers/routes.js"></script>
