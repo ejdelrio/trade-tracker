@@ -19,7 +19,7 @@ var app = app||{};
   };
 
   login.verifyPass = (password) => {
-    $.get('/password', password);
+    $.get('/password', password).then(data => console.log(data));
   };
 
   $login.find('button').on('click',login.verifyUser);
