@@ -84,15 +84,6 @@ Twit.prototype.totalsForWar = function(){
   this.warScore = totWarScore;
 };
 
-Twit.prototype.fetchEmbed = function() {
-  this.tweets.map(tweet => {
-    $.get(`/publish/oembed?url=https%3A%2F%2Ftwitter.com%2FInterior%2Fstatus%2F${tweet.id_str}`)
-    .then(data => {
-      tweet.embedhtml = data.html;
-    });
-  });
-};
-
 function Twit(screen_name){
   this.screen_name = screen_name.toUpperCase();
   this.tweets = [];
