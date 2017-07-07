@@ -290,7 +290,7 @@ p {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
+  display: block;
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
@@ -310,16 +310,17 @@ p {
 }
 
 .login-container {
-  margin-right: 500px;
+  /*margin-right: 500px;*/
   padding: 16px;
   margin-top: 450px;
-  float: right;
+  float: left;
   display: block;
 }
 
 .sign_container {
-  margin-left: 500px;
+  margin-top: 200px;
   padding: 16px;
+  float: right;
 
 }
 
@@ -327,7 +328,7 @@ p {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
+  display: block;
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
@@ -352,4 +353,9 @@ p {
 }
 h2 {
   margin-bottom: 0;
+  font-size: 5vw;
+  background: -webkit-linear-gradient(orange, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
