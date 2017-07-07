@@ -44,7 +44,7 @@ app.use(express.static('./public'));
 app.get('/search/*', proxyTwitter);
 app.get('/publish/*', proxyTweet);
 
-app.get('/', (req, res) =>
+app.get('*', (req, res) =>
 res.sendFile('index.html', {root: './public'}));
 
 app.get('/validate', (req, res) => {
