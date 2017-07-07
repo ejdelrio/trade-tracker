@@ -20,6 +20,7 @@ function submitSearch(event){
   twitTwo = event.target.twitTwo.value.toUpperCase().replace('@','');
   assignTwits(twitOne, twitTwo);
   fetchTweets(results);
+  $('#accordion').show().css('width', '100%');
   // form.reset();
 }
 

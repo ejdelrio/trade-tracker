@@ -2,6 +2,7 @@
   font-family: 'helvetica';
 }
 
+
 .diamond_plate {
   width: 760px;
   position: absolute;
@@ -119,9 +120,13 @@ input {
 }
 
 #accordion {
+  margin: 0;
   width: 100%;
   height: 40px;
+  display: block;
   background: white;
+  text-align: center;
+  font-size: 35px;
 }
 
 #ind-tweets {
