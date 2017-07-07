@@ -1,0 +1,79 @@
+.log input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.submit {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submit:hover {
+  opacity: 0.8;
+}
+
+.login-container {
+  /*margin-right: 500px;*/
+  padding: 16px;
+  margin-top: 200px;
+  float: left;
+  display: block;
+}
+
+.sign_container {
+  margin-top: 200px;
+  padding: 16px;
+  float: right;
+
+}
+
+.sign input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.sign {
+  margin-top: -250px;
+}
+.signupbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  .signupbtn {
+      width: 100%;
+    }
+}
+h2 {
+  text-shadow: 3px 1px 1px black;
+  margin-bottom: 0;
+  font-size: 5vw;
+  background: -webkit-linear-gradient(orange, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+label {
+  text-shadow: 3px 1px 1px black;
+  font-size: 2vw;
+  color: white;
+}
