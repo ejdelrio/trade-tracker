@@ -20,7 +20,11 @@ html {
 }
 
 li a {
-  color: white;
+  color: red;
+}
+
+li a:hover {
+  color: gold;
 }
 
 body {
@@ -282,11 +286,15 @@ article img {
   margin-right: 50px;
 }
 
-p   {
+p {
   display: inline-block;
   width: 600px;
   height: 200px;
-  font-family: 'Dosis', sans-serif;
+  font-size: 72px;
+  background: -webkit-linear-gradient(orange, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   font-size: 30px;
 }
 
@@ -316,8 +324,9 @@ p   {
 .login-container {
   margin-right: 500px;
   padding: 16px;
-  margin-top: 150px;
+  margin-top: 450px;
   float: right;
+  display: block;
 }
 
 .sign_container {
@@ -336,7 +345,7 @@ p   {
 }
 
 .sign {
-  margin-top: -20px;
+  margin-top: -250px;
 }
 .signupbtn {
   background-color: #4CAF50;
@@ -349,7 +358,10 @@ p   {
 }
 
 @media screen and (max-width: 640px) {
-    .cancelbtn, .signupbtn {
-        width: 100%;
+  .signupbtn {
+      width: 100%;
     }
+}
+h2 {
+  margin-bottom: 0;
 }
