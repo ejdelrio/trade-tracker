@@ -312,7 +312,7 @@ p {
 .login-container {
   /*margin-right: 500px;*/
   padding: 16px;
-  margin-top: 450px;
+  margin-top: 200px;
   float: left;
   display: block;
 }
@@ -352,10 +352,16 @@ p {
     }
 }
 h2 {
+  text-shadow: 3px 1px 1px black;
   margin-bottom: 0;
   font-size: 5vw;
   background: -webkit-linear-gradient(orange, yellow);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
 
+label {
+  text-shadow: 3px 1px 1px black;
+  font-size: 2vw;
+  color: white;
 }
