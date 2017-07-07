@@ -23,7 +23,7 @@ article img {
 p {
   display: inline-block;
   width: 600px;
-  height: 200px;
+  height: 210px;
   font-size: 72px;
   background: -webkit-linear-gradient(orange, yellow);
   -webkit-background-clip: text;
