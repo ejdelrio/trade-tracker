@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>tweet fighter</title>
     <link rel="stylesheet" href="style/normalize.css">
-    <link rel="stylesheet" href="./scripts/lib/cal-heatmap-master/cal-heatmap.css">
     <link rel="stylesheet" href="style/style.css">
     <script id="handle-template" type="text/x-handlebars-template">
       <div id="test" class="tab-content">
@@ -51,11 +50,6 @@ ChangeIt();
         <input id="twitTwo" type="text" name="twitTwo" placeholder="enter @twitter handle" autocomplete="off">
         <button id="toggler" type="submit">PICK A FIGHT!</button>
       </form>
-
-      <div id="tweet_cal">
-        <span id=cal_title>click the month of the beef</span>
-        <div id="calendar"></div>
-      </div>
       <div id="display_block">
         <span id="favourites_one"></span>
         <img id="favourites_img"><span id="favourites_legend"></span>
@@ -129,6 +123,7 @@ ChangeIt();
   <script src="./scripts/lib/jquery.js"></script>
   <script src="./scripts/lib/handlebars.js"></script>
   <script src="./scripts/lib/page.js"></script>
+  <script src="./scripts/hamburger.js"></script>
   <script src="./scripts/controllers/viewController.js"></script>
   <script src="bearertoken.js"></script>
   <script src="./scripts/models/tweets.js"></script>

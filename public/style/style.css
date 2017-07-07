@@ -118,6 +118,18 @@ input {
   transition: 350ms;
 }
 
+#accordion {
+  width: 100%;
+  height: 40px;
+  background: white;
+}
+
+#ind-tweets {
+  overflow-y: scroll;
+  height: 100px;
+  width: 100%;
+}
+
 #toggler {
   width: 90px;
   height: 30px;
