@@ -8,6 +8,8 @@ var app = app || {};
     $('#home').show();
     $('#login').hide();
     $('#about').hide();
+    $('.ind-tweets').hide();
+
   };
   module.homeController = homeController;
 })(app);
