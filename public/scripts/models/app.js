@@ -84,11 +84,12 @@ Twit.prototype.totalsForWar = function(){
   this.warScore = totWarScore;
 };
 
-Twit.prototype.fetchEmbed = function() {
+Twit.prototype.fetchEmbed = function(callback) {
   this.tweets.map(tweet => {
     $.get(`/publish/oembed?url=https%3A%2F%2Ftwitter.com%2FInterior%2Fstatus%2F${tweet.id_str}`)
     .then(data => {
       tweet.embedhtml = data.html;
+      callback(tweet);
     });
   });
 };
@@ -98,17 +99,26 @@ function Twit(screen_name){
   this.tweets = [];
 }
 
+function renderTweets() {
+  let $twitone = $('#twit-one');
+  let $twittwo = $('#twit-two');
+  twitOneObj.fetchEmbed(tweet => $twitone.append(tweet.embedhtml));
+  twitTwoObj.fetchEmbed(tweet => $twittwo.append(tweet.embedhtml));
+}
+
 function fetchTweets(callback) {
   $.get(`/search/tweets.json?q=from%3A%40${twitOne}%20%40${twitTwo}&src=typd`)
-  .then(data => {
+  .done(data => {
     twitOneObj.tweets = data.statuses;
     app.Tweets.first = data.statuses;
-  })
-  .then($.get(`/search/tweets.json?q=from%3A%40${twitTwo}%20%40${twitOne}&src=typd`).then(data => {
-    twitTwoObj.tweets = data.statuses;
-    app.Tweets.second = data.statuses;
-  }).then(callback));
-}
+    $.get(`/search/tweets.json?q=from%3A%40${twitTwo}%20%40${twitOne}&src=typd`)
+    .done(data => {
+      twitTwoObj.tweets = data.statuses;
+      app.Tweets.second = data.statuses;
+      callback();
+    });
+  }
+);}
 
 function assignTwits(twitOne, twitTwo){
   twitOneObj = new Twit(twitOne);
@@ -134,5 +144,7 @@ function results(){
   sortActiveTweets();
   expandAndCenter();
   renderResults();
-  app.Tweets.runBoth();
+  $('.ind-tweets').show();
+  renderTweets();
+  // app.Tweets.runBoth();
 }

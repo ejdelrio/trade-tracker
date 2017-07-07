@@ -31,6 +31,7 @@ body {
   margin: 0 auto;
   width: 960px;
   font-family: 'helvetica';
+  background-color: black;
 }
 
 .fighter {
@@ -119,13 +120,20 @@ input {
 }
 
 #accordion {
-  width: 100%;
+  display: block;
+  width: 100px;
+  margin: 0 auto;
   height: 40px;
   background: white;
 }
 
+.ind-tweets {
+  display: none;
+  position: static;
+  width: 100%;
+}
+
 #ind-tweets {
-  overflow-y: scroll;
   height: 100px;
   width: 100%;
 }
