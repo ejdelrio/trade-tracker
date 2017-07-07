@@ -2,12 +2,12 @@
 var app = app || {};
 
 (function(module) {
-  const homeController = {}
+  const homeController = {};
 
   homeController.init = () => {
     $('#home').show();
     $('#login').hide();
     $('#about').hide();
-  }
+  };
   module.homeController = homeController;
 })(app);
