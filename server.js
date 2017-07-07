@@ -18,15 +18,23 @@ client.connect();
 client.on('error', (err) => console.log(err));
 
 var proxyTwitter = function(request, response) {
-  console.log('proxyTwitter!!!!');
   (requestProxy({
     url: 'https://api.twitter.com/1.1/search/' + request.params[0],
     json: true,
     headers: {
-      'Authorization': `Bearer ${process.env.BEARER_TOKEN}`
+      'Authorization': `Bearer AAAAAAAAAAAAAAAAAAAAAJx81QAAAAAABkOxAGRAju80DRO4WzmoF%2FyBj7k%3D4SE9EQfl2WMIQLLWOx8zhzFK9Oy13p4l7tAaD5mJUDnu0Dpjip`
     }
   }))(request, response);
-  console.log(request.params[0]);
+};
+
+var proxyTweet = function(request, response) {
+  (requestProxy({
+    url: 'https://publish.twitter.com/' + request.params[0],
+    json: true,
+    // headers: {
+    //   'Authorization': `Bearer ${process.env.BEARER_TOKEN}`
+    // }
+  }))(request, response);
 };
 
 app.use(bodyParser.json());
@@ -34,6 +42,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 app.get('/search/*', proxyTwitter);
+app.get('/publish/*', proxyTweet);
 
 app.get('/', (req, res) =>
 res.sendFile('index.html', {root: './public'}));
